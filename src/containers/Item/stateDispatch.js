@@ -1,4 +1,6 @@
-import { activeChanged, startFetchingItems, failedFetch, itemsFetched } from '../../reducers/itemsReducer/actions';
+import {
+  activeChanged, startFetchingItems, failedFetch, itemsFetched,
+} from '../../reducers/itemsReducer/actions';
 
 const mapStateToProps = ({ location: { payload: { id } }, items }) => ({ activeId: id, items });
 

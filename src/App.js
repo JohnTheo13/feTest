@@ -1,13 +1,14 @@
+// @flow
 import React from 'react';
 import { connect } from 'react-redux';
 
-// Contains 'Home', 'User' and 'NotFound'
+// Contains 'Home', 'Item' and 'NotFound'
 import * as components from './containers';
 
-const App = ({ page }) => {
+const App = ({ page }: { page: string }) => {
     const Component = components[page];
     return <Component />;
   },
-  mapStateToProps = ({ page }) => ({ page });
+  mapStateToProps: Function = ({ page }: { page: string }): { page: string } => ({ page });
 
 export default connect(mapStateToProps)(App);

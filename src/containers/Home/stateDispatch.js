@@ -1,4 +1,6 @@
-import { startFetchingItems, itemsFetched, failedFetch } from '../../reducers/itemsReducer/actions';
+import {
+  startFetchingItems, itemsFetched, failedFetch,
+} from '../../reducers/itemsReducer/actions';
 
 const mapStateToProps = ({ items }) => ({ items }),
 

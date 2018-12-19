@@ -1,10 +1,14 @@
-import { ITEMS_FETCHING, ITEMS_FETCHED, ACTIVE_ITEM_UPDATED, FAILED_FETCH } from './actionTypes';
+import {
+  ITEMS_FETCHING, ITEMS_FETCHED, ACTIVE_ITEM_UPDATED, FAILED_FETCH,
+} from './actionTypes';
 
-const initialState = { fetching: false,
+const initialState = {
+  fetching: false,
   fetched: false,
   failedFetch: false,
   list: [],
-  activeItem: {} };
+  activeItem: {},
+};
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -15,13 +19,15 @@ export default (state = initialState, action) => {
         ...state,
         fetched: true,
         fetching: false,
-        list: action.payload
+        list: action.payload,
       };
     case ACTIVE_ITEM_UPDATED:
       const active = state.list.find(item => item.id.toString() === action.payload); // eslint-disable-line
       return { ...state, activeItem: { ...active } };
     case FAILED_FETCH:
-      return { ...state, failedFetch: true, fetching: false };
+      return {
+        ...state, failedFetch: true, fetching: false,
+      };
     default:
       return state;
   }

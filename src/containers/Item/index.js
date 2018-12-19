@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { mapStateToProps, mapDispatchToProps } from './stateDispatch';
@@ -5,8 +6,18 @@ import api from '../../api';
 import ItemComtainer from './ItemContainer';
 import Gallery from '../../components/Gallery';
 import Comments from '../../components/Comments';
+import { ItemType } from '../../types';
 
-class Item extends Component {
+type ComponentType = {
+  activeId: number,
+  items: {
+    activeItem: ItemType,
+  },
+  failedFetch: Function,
+  startFetchingItems: Function,
+  itemsFetched: Function }
+
+class Item extends Component<ComponentType> {
   async componentDidMount() {
     const {
       activeId,
@@ -32,7 +43,7 @@ class Item extends Component {
 
   render() {
     const { items: { activeItem: {
-      title, description, specification, images, id
+      title, description, specification, images, id,
     } } } = this.props;
     return (
       <ItemComtainer>
@@ -53,8 +64,9 @@ class Item extends Component {
         <p>{description}</p>
         {id && <Comments id={id} />}
       </ItemComtainer>
-    )
+    );
   }
-};
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Item);
+export default
+(connect((mapStateToProps: Function), (mapDispatchToProps: Function)): Function)(Item);
