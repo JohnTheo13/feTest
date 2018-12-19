@@ -6913,7 +6913,7 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prop-types@^15.5.4, prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -7291,6 +7291,15 @@ recursive-readdir@2.2.2:
   resolved "https://registry.yarnpkg.com/recursive-readdir/-/recursive-readdir-2.2.2.tgz#9946fb3274e1628de6e36b2f6714953b4845094f"
   dependencies:
     minimatch "3.0.4"
+
+redux-first-router-link@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/redux-first-router-link/-/redux-first-router-link-2.0.2.tgz#520b085fb9cf484f3a2d15ba6358830a8e135988"
+  dependencies:
+    path-to-regexp "^1.7.0"
+    prop-types "^15.5.10"
+    rudy-history "^1.0.0"
+    rudy-match-path "^0.3.0"
 
 redux-first-router@^2.1.1:
   version "2.1.1"

@@ -1,29 +1,32 @@
+// eslint arrow-body-style: ["error", "always"]
+// eslint object-curly-newline: ["error", "always"]
 import Config from '../config';
 
 /**
 * All Api requests
 */
 
-const api = { fetch: async (url, options = {}) => {
-  let response;
-  try {
-    response = await fetch(`${Config.API_URL}/${url}`, options);
+const api = {
+  fetch: async (url, options = {}) => {
+    let response;
+    try {
+      response = await fetch(`${Config.API_URL}/${url}`, options);
 
-    switch (response.status) {
-      case 404:
-        throw Error('not_found');
-      case 405:
-        throw Error('not_allowed');
-      default:
+      switch (response.status) {
+        case 404:
+          return response.status;
+        case 405:
+          return response.statusl;
+        default:
+      }
+    } catch (error) {
+      return Promise.reject(error);
     }
-  } catch (error) {
-    return Promise.reject(error);
-  }
-  return response.json();
-},
-async get(...props) {
-  return this.fetch(props);
-} };
+    return response.json();
+  },
+  async get(...props) {
+    return this.fetch(props);
+  } };
 
 
 export default api;

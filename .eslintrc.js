@@ -17,8 +17,8 @@ module.exports = {
    },
   "extends": "airbnb",
   "rules": {
-  "object-curly-newline": ["error", "never"],
-  "one-var": ["error", "consecutive"],
+  "object-curly-newline": ["error", { "minProperties": 3 }],
+  "one-var":  ["error", { var: "never" }],
   "import/no-extraneous-dependencies": 0,
   "jsx-a11y/no-static-element-interactions": 0,
   "import/no-unresolved": 0,
@@ -27,9 +27,10 @@ module.exports = {
   "react/no-array-index-key": 0,
   "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
   "class-methods-use-this": 0,
-  "one-var": ["error", "always"],
   "arrow-parens": ["error", "as-needed"],
-  "arrow-body-style": ["error", "as-needed"],
+  "arrow-body-style": ["error", "never"],
+  "implicit-arrow-linebreak": ["error", "beside"],
+  "react/jsx-one-expression-per-line": [1, { "allow": "single-child" }],
   "jsx-a11y/label-has-for": [ 2, {
             "components": [ "Label" ],
             "required": {
