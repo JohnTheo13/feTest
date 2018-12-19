@@ -1,5 +1,4 @@
-// eslint arrow-body-style: ["error", "always"]
-// eslint object-curly-newline: ["error", "always"]
+/* eslint-disable */
 import Config from '../config';
 
 /**
