@@ -50,9 +50,8 @@ class Item extends Component<ComponentType> {
         <h2>{title}</h2>
         <div className="gallery">
           {images && images.length > 0 && (
-            <Gallery images={images.map(image => ({  // eslint-disable-line
-              src: image.original,
-              thumbnail: image.original }))}
+            <Gallery
+              images={images.map(image => ({ src: image.original, thumbnail: image.original }))}
             />
           )}
           <div>
