@@ -41,6 +41,11 @@ class Item extends Component<ComponentType> {
     }
   }
 
+  componentWillUnmount() {
+    // needed for back button 
+    this.props.clearActive();
+  }
+
   render() {
     const { items: { activeItem: {
       title, description, specification, images, id,

@@ -1,5 +1,5 @@
 import {
-  ITEMS_FETCHING, ITEMS_FETCHED, ACTIVE_ITEM_UPDATED, FAILED_FETCH,
+  ITEMS_FETCHING, ITEMS_FETCHED, ACTIVE_ITEM_UPDATED, FAILED_FETCH, ACTIVE_CLEAR
 } from './actionTypes';
 
 const initialState = {
@@ -28,6 +28,8 @@ export default (state = initialState, action) => {
       return {
         ...state, failedFetch: true, fetching: false,
       };
+    case ACTIVE_CLEAR:
+      return { ...state, activeItem: {} };
     default:
       return state;
   }
